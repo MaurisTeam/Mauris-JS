@@ -1,0 +1,23 @@
+{
+  "name": "mauris-js",
+  "authors": [
+    "blablapolicja <blablapolicja@gmail.com>"
+  ],
+  "description": "Mauris javascript library",
+  "main": "mauris.js",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "mauris"
+  ],
+  "license": "MIT",
+  "homepage": "http://mauris.info/",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
