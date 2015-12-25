@@ -32,6 +32,28 @@ angular.module('Mauris', [])
         	};
         };
 
+        service.convertImgToBase64URL = function (url){
+            var q = $q.defer(),
+                img = new Image();
+
+            img.crossOrigin = 'Anonymous';
+            img.onload = function(){
+                var canvas = document.createElement('CANVAS'),
+                    ctx = canvas.getContext('2d'),
+                    dataURL;
+
+                canvas.height = this.height;
+                canvas.width = this.width;
+                ctx.drawImage(this, 0, 0);
+                dataURL = canvas.toDataURL('image/jpeg');
+                canvas = null;
+                q.resolve(dataURL);
+            };
+            img.src = url;
+
+            return q.promise;
+        };
+
 		service.upload = function (params, url, images){
 			var q = $q.defer(),
 				formData = new FormData(),
