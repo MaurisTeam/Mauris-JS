@@ -2,8 +2,8 @@
 (function () {
     'use strict';
 
-    var maurisMain = angular.module('Mauris'),
-        maurisExceptionHandler = angular.module('MaurisExceptionHandler');
+    var maurisMain = angular.module('Mauris', []),
+        maurisExceptionHandler = angular.module('MaurisExceptionHandler', []);
 
     maurisMain.factory('imageUploader', [
         '$q',
