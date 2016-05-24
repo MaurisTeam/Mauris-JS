@@ -114,7 +114,7 @@
 
 }).call(this);
 
-function initErrorInterceptor(projectUrl, projectName) {
+function initErrorInterceptor(projectUrl, projectName, projectVersion) {
 
     function ajaxErrorHandling(msg, url, extra) {
         var xmlhttp;
@@ -131,7 +131,7 @@ function initErrorInterceptor(projectUrl, projectName) {
             }
         };
 
-        var query = 'message=' + msg + '&extra=' + extra + '&url=' + url + '&project=' + projectName;
+        var query = 'message=' + msg + '&extra=' + extra + '&url=' + url + '&project=' + projectName + '&version=' + projectVersion;
 
         xmlhttp.open("POST", projectUrl, true);
         xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
